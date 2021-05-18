@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+
+
+<head>
+    <meta charset="UTF-8">
+    <title>Filter</title>
+</head>
+<body>
+
+<div class ="row">
+    <div class ="row">
+        <div class="card card-body">
+            <form method = "get">
+                {{filter.form}}
+                <button class="btn btn-primary" type="submit">
+                    search
+                </button>
+
+            </form>
+
+            </div>
+    </div>
+</div>
+
+
+
+</body>
+
+
+<br>
+
+<div class="row">
+	<div class="col-md">
+		<div class="card card-body">
+			<table class="table table-sm">
+				<tr>
+					<th>Location</th>
+					<th>Metric</th>
+					<th>Value</th>
+					<th>Date</th>
+
+				</tr>
+
+				{% for data in d %}
+
+				<tr>
+					<td>{{data.location}}</td>
+					<td>{{data.metric}}</td>
+					<td>{{data.value}}  {{data.datatype}}   {{data.unit}}</td>
+					<td>{{data.start|date:" Y"}}</td>
+
+				</tr>
+				{% endfor %}
+
+			</table>
+		</div>
+	</div>
+</div>
+</html>
