@@ -34,7 +34,7 @@ class Unit(models.Model):
 class Metric(models.Model):
     name = models.CharField(max_length=100)
     description =models.CharField(max_length=200, blank=True)
-    units=models.ManyToManyField('Unit')
+    #units=models.ManyToManyField('Unit')
     parent=models.ForeignKey('Metric', on_delete=models.SET_NULL, default=None, blank=True, null=True)
 
     def __str__(self):
